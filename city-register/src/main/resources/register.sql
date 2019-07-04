@@ -73,6 +73,7 @@ CREATE TABLE cr_address_person (
   person_id integer not null,
   start_date date not null,
   end_date date,
+  temporal boolean DEFAULT false,
   PRIMARY KEY (address_person_id),
   FOREIGN KEY (address_id) REFERENCES cr_address(address_id) ON DELETE RESTRICT,
   FOREIGN KEY (person_id) REFERENCES cr_person(person_id) ON DELETE RESTRICT
