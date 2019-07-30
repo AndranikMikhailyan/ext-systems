@@ -81,6 +81,15 @@ public class PersonRequest {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "PersonRequest{" +
+                "surName='" + surName + '\'' +
+                ", givenName='" + givenName + '\'' +
+                ", patronymic='" + patronymic + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", streetCode=" + streetCode +
+                ", building='" + building + '\'' +
+                ", extension='" + extension + '\'' +
+                ", apartment='" + apartment + '\'' +
+                '}';
     }
 }

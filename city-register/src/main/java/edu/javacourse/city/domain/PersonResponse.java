@@ -23,6 +23,9 @@ public class PersonResponse {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "PersonResponse{" +
+                "registered=" + registered +
+                ", temporal=" + temporal +
+                '}';
     }
 }
