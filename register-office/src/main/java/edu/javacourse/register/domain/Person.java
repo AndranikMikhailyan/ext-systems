@@ -1,16 +1,27 @@
 package edu.javacourse.register.domain;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+@Table(name = "ro_person")
+@Entity
 public class Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "person_id")
     private Long personId;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
+    @Column(name = "patronymic")
     private String patronymic;
+    @Column(name = "date_birth")
     private LocalDate dateOfBirth;
-    private List<Passport> pasports;
+    @OneToMany(cascade = {CascadeType.REFRESH}, fetch = FetchType.LAZY, mappedBy = "person")
+    private List<Passport> passports;
 
     public Long getPersonId() {
         return personId;
@@ -52,11 +63,11 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public List<Passport> getPasports() {
-        return pasports;
+    public List<Passport> getPassports() {
+        return passports;
     }
 
-    public void setPasports(List<Passport> pasports) {
-        this.pasports = pasports;
+    public void setPassports(List<Passport> passports) {
+        this.passports = passports;
     }
 }
